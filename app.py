@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 
 # Konfigurasi database dari environment variable
 database_url = os.environ.get("DATABASE_URL")
